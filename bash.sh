@@ -5,7 +5,7 @@ arr=( "fpu" "vme" "de" "pse" "tsc" "msr" "pae" "mce" "cx8" "apic" "sep" "mtrr" "
 for j in "${arr[@]}"; do
 for i in {1..3}; do
 name=date +%T
-icc -O$i -m$j F1.c -o go-$name
+icc -O$i -m$j fibka.c -o go-$name
 echo "$j $i:"
 time ./go-$name
 done
