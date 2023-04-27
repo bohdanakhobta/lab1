@@ -1,17 +1,38 @@
-﻿#include <iostream>
+#include <iostream>
 using namespace std;
-int main() 
-{
-    int n1 = 1, n2 = 1;
-    int high;
-    cout << "Amount of numbers:" << endl;
-    cin >> high;
 
-    while (n2 <= high) {
-        cout << n2 << endl;
-        int temp = n1;
-        n1 = n2;
-        n2 = n1 + temp;
+void bubbleSort(int arr[], int n) {
+    bool swapped;
+    for (int i = 0; i < n - 1; i++) {
+        swapped = false;
+        for (int j = 0; j < n - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                swap(arr[j], arr[j + 1]);
+                swapped = true;
+            }
+        }
+     
+        if (swapped == false)
+            break;
     }
+}
+
+int main() {
+   
+
+    for (int i = 0; i < 1099999; i++) { 
+        int arr[100];
+
+        
+        for (int i = 0; i < 100; i++) {
+            arr[i] = rand() % 100 + 1; 
+        }
+        int n = sizeof(arr) / sizeof(arr[0]);
+        bubbleSort(arr, n);
+    }
+
+    
+   
+        cout << "OK";
     return 0;
 }
